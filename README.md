@@ -223,6 +223,61 @@ uv run pytest tests/tools/test_hello_tool.py
    - Update this README with new features
    - Document tool and prompt signatures
 
+## 📈 Template Extension Guide
+
+This template currently includes only a basic "hello" tool and prompt as examples, designed to be extended for any domain-specific MCP server project.
+
+### Product Requirements Documents (PRDs)
+
+The `specs/` directory contains project PRDs for iterative development:
+
+- **Human Version**: `prd_v0.md` - Initial human-written requirements
+- **AI-Enhanced Version**: `prd_v0_ai_enhanced.md` - AI-enhanced requirements with detailed specifications
+
+#### Version Management
+- Progress through versions: v1, v2, v3, etc.
+- Each version represents:
+  - New feature additions
+  - Major architectural changes
+  - Critical bug fixes
+- Maintain both human (`prd_vX.md`) and AI-enhanced (`prd_vX_ai_enhanced.md`) versions
+
+#### AI Enhancement Process
+- Use Claude Code slash command `/quick-plan` to generate AI-enhanced PRDs
+- This command is defined in `.claude/commands/quick-plan.md`
+- Automatically creates comprehensive technical specifications from human requirements
+
+### Claude Code Commands
+
+Located in `.claude/commands/`:
+
+#### Context Priming Commands
+- **`prime.md`**: General context priming for Claude
+- **`prime_cc.md`**: Claude Code-specific context priming
+- Use these at the beginning of sessions to establish project context
+
+#### Planning Command
+- **`quick-plan.md`**: Converts human PRDs into detailed technical specifications
+- Automatically generates implementation plans with code examples
+
+### Output Styles
+
+Located in `.claude/output-styles/`:
+
+- **`genui.md`**: General-purpose HTML output style
+  - Generates complete, self-contained HTML documents
+  - Includes modern embedded CSS styling
+  - Automatically opens in browser
+  - Useful for creating reports, documentation, or visual outputs
+
+### Extending the Template
+
+1. **Start with PRD**: Write your requirements in `specs/prd_v1.md`
+2. **Generate AI-Enhanced Version**: Use `/quick-plan` to create detailed specifications
+3. **Implement Features**: Add tools and prompts following the established patterns
+4. **Document Progress**: Update PRDs for each major version
+5. **Utilize Claude Commands**: Use context priming and planning commands for efficiency
+
 ## 📚 Documentation
 
 - [FastMCP Documentation](https://github.com/fastmcp/fastmcp)
